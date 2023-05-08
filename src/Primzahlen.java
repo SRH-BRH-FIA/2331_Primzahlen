@@ -7,16 +7,15 @@ public class Primzahlen {
         int zahl = eingabe.nextInt();
 
         // Verarbeitung
-        boolean istPrimzahl = true;
         int teiler;
-        for ( teiler = 2 ; istPrimzahl && teiler < zahl ; teiler++ ) {
+        for ( teiler = 2 ; teiler < zahl ; teiler++ ) {
             if ( zahl % teiler == 0 ) {
                 System.out.println("Die Zahl ist keine Primzahl.");
                 System.out.println("Folgender Teiler wurde gefunden: " + teiler);
-                istPrimzahl = false;
+                break;
             }
         }
-        if (istPrimzahl)
+        if ( teiler == zahl )
             System.out.println("Die Zahl ist eine Primzahl");
     }
 }
